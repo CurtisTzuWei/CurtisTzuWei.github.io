@@ -4,6 +4,58 @@
   
   
   <entry>
+    <title>垃圾隨意丟棄科技執法</title>
+    <link href="/2023/05/26/trash/"/>
+    <url>/2023/05/26/trash/</url>
+    
+    <content type="html"><![CDATA[<h1 id="垃圾隨意丟棄科技執法"><a href="#垃圾隨意丟棄科技執法" class="headerlink" title="垃圾隨意丟棄科技執法"></a>垃圾隨意丟棄科技執法</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>為保持市容環境，環保局針對重點路段裝設監視錄影設施，以科技執法遏止垃圾隨意丟棄。這是與博遠智能科技(BOVIA)合作的計畫，已實際運用在XX政府環保局。以往取締亂丟垃圾需要人工看影片檢視，費時又費力。這項計畫目的是以科技執法自動化方式記錄一段影像中民眾隨意丟棄垃圾的時間。</p><h2 id="系統流程"><a href="#系統流程" class="headerlink" title="系統流程"></a>系統流程</h2><p><img src="/img/%E5%80%92%E5%9E%83%E5%9C%BE%E6%B5%81%E7%A8%8B%E5%9C%96.png"><br>環保局輸入一段影片，自動輸出民眾隨意丟棄垃圾的時間。</p><h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h3 id="Opticla-Flow"><a href="#Opticla-Flow" class="headerlink" title="Opticla Flow"></a>Opticla Flow</h3><p>連續影像轉換為Optical Flow，再將綠、黃、橘這幾個顏色保留下來，並且去除飽和度較低的顏色，目的是過濾影片中”向下以外”的動作，以及過濾移動速度較慢的物體。<br><img src="/img/opticalflow.png"><br><img src="/img/opticalflow1.gif"><br>補充: Optical Flow(光流)，是將連續影片轉換為方向的方法，不同顏色代表不同方向，越靠中心物體移動速度越慢，物體移動速度越快。</p><p>利用連通域分析(connected component analysis)找出光流連通域，連通域大於設定閥值為疑似垃圾區域，以藍色框標記。<br><img src="/img/%E9%80%A3%E9%80%9A%E5%9F%9F%E5%88%86%E6%9E%90.png"></p><h3 id="Human-Detect-x2F-Keypints-Detect"><a href="#Human-Detect-x2F-Keypints-Detect" class="headerlink" title="Human Detect &#x2F; Keypints Detect"></a>Human Detect &#x2F; Keypints Detect</h3><p>YOLO v5 偵測行人後，利用物件框判斷此行人為移動中或靜止行人。(黑框:移動中行人, 紅框:靜止行人, 黃框:亂丟垃圾行人)，Keypoints model 追蹤行人手腕處 ，利用各種過濾方法排除光流雜訊，只保留疑似垃圾區域。</p><h2 id="結果展示"><a href="#結果展示" class="headerlink" title="結果展示"></a>結果展示</h2><p>影片中左下有一民眾正在隨意丟棄垃圾，疑似垃圾區域以及違規民眾皆已黃框標記。此系統精準捕捉民眾違法行為。<br>在影片中的左下方，我們可以看到一位民眾正在隨意丟棄垃圾，將垃圾從手中扔到地上。這個行為違反了對垃圾處理的相關規定和環境保護法律法規。經過我們系統的準確識別和分析，不僅成功捕捉到這位違規民眾的行為，也將垃圾區域和違規民眾以黃框標記。<br><img src="/img/garbage_demo.gif"></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>dToF使用者偵測</title>
+    <link href="/2023/05/26/dToF/"/>
+    <url>/2023/05/26/dToF/</url>
+    
+    <content type="html"><![CDATA[<p>將dToF(direct-ToF)3D感測晶片技術運用在筆電鏡頭當中，用以來偵測使用者是否正使用筆電。若無使用即可暫時將螢幕關閉，除了能強化資安，更可節省功耗。</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>指定區域物件生成</title>
+    <link href="/2023/05/26/GAN/"/>
+    <url>/2023/05/26/GAN/</url>
+    
+    <content type="html"><![CDATA[<p>本計畫屬於國防部保密範疇…</p><!-- ## Quick Start### Create a new post<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a> –&gt;</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>彩色影像轉紅外線影像</title>
+    <link href="/2023/05/26/rgb2IR/"/>
+    <url>/2023/05/26/rgb2IR/</url>
+    
+    <content type="html"><![CDATA[<h1 id="彩色影像轉紅外線影像"><a href="#彩色影像轉紅外線影像" class="headerlink" title="彩色影像轉紅外線影像"></a>彩色影像轉紅外線影像</h1><h3 id="論文標題"><a href="#論文標題" class="headerlink" title="論文標題"></a>論文標題</h3><p>Student Surpasses Teacher: Object-Specific Knowledge Distillation Generative Model for Visible-to-Infrared Image Translation</p><h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>這項專案的目的是開發一種先進的技術，能夠在不使用熱成像儀的情況下，將普通彩色影像轉換成紅外線影像，使得任何普通的彩色相機都能夠具備紅外線檢測和成像的功能。這樣一來，使用者就能夠以相對低廉的價格，獲得紅外線影像的能力，並應用於各種領域，例如安防、醫學、能源等。</p><h3 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h3><p>我們提出一種基於Online GAN Knowledge Distillation的訓練框架，以RGB為輸入，生成對應的紅外線影像。以KD為基礎訓練Teacher Generator和Student Generator，並設計各種KD Loss設法讓Student超越Teacher，達到了小模型且高清晰度。其中結合Special-aware、Attribute-aware等技術，從原始影像中提取更多有用資訊，提升生成影像品質。<br><img src="/img/rgb2IR%E6%9E%B6%E6%A7%8B%E5%9C%96.png"></p><h2 id="提出方法"><a href="#提出方法" class="headerlink" title="提出方法"></a>提出方法</h2><h3 id="Online-Knowledge-Distillation-with-Discriminator-Free"><a href="#Online-Knowledge-Distillation-with-Discriminator-Free" class="headerlink" title="Online Knowledge Distillation with Discriminator Free"></a>Online Knowledge Distillation with Discriminator Free</h3><h3 id="Teacher-Generator"><a href="#Teacher-Generator" class="headerlink" title="Teacher Generator"></a>Teacher Generator</h3><h3 id="Student-Generator"><a href="#Student-Generator" class="headerlink" title="Student Generator"></a>Student Generator</h3><h3 id="Special-aware-amp-Attribute-aware"><a href="#Special-aware-amp-Attribute-aware" class="headerlink" title="Special-aware &amp; Attribute-aware"></a>Special-aware &amp; Attribute-aware</h3><h2 id="實驗結果"><a href="#實驗結果" class="headerlink" title="實驗結果"></a>實驗結果</h2><p>在這項研究中採用了SOTA Model InfraGAN 作為基準(baseline)，並且進行了比較分析。根據比較圖，肉眼可見我們的方法在圖片生成的清晰度上明顯優於基準線。</p><p>其中，在第一和第三個例子中，我們的方法在生成圖片時對特定物件(汽車)進行了加強，同時增加了圖片的屬性。這樣的處理方式使得模型能夠學習更多有關這些物件的資訊，從而在結果中凸顯出了汽車的清晰度。這種增強的效果使得生成圖片更加逼真，輪廓及細節更加清晰可見。<br><img src="/img/rgb2IR%E7%B5%90%E6%9E%9C.png"></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Hello World</title>
     <link href="/2023/05/26/hello-world/"/>
     <url>/2023/05/26/hello-world/</url>
